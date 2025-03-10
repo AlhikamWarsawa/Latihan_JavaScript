@@ -1,15 +1,17 @@
 // Register
-let name = prompt("Inputkan Nama Anda")
+let name = prompt("Inputkan Nama Anda").trim()
 localStorage.setItem("nama", name)
 let balance = parseInt(prompt("Inputkan Saldo Anda"))
+localStorage.setItem("saldo", balance)
 balance = balance < 0 ? alert("Angka Tidak Boleh Negatif") : (isNaN(balance)) === true ? balance = null : balance
 balance = balance ?? 0
 
 if (balance >= 0) {
 // Login
-    let outputNama = localStorage.getItem("nama")
-    let login = prompt("Silahkan Login Nama Anda")
-    if (login !== outputNama) {
+    balance = parseInt(localStorage.getItem("saldo"))
+    name = localStorage.getItem("nama")
+    let login = prompt("Silahkan Login Nama Anda").trim()
+    if (login !== name) {
         alert("Pengguna Tidak Ditemukan")
     } else {
 // Menu Utama
@@ -59,3 +61,5 @@ if (balance >= 0) {
         }
     }
 }
+document.writeln(`<h1>Nama Anda Adalah : ${name}</h1>`)
+document.writeln(`<h1>Saldo Anda Adalah : ${balance}</h1>`)
