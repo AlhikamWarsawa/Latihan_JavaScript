@@ -1,6 +1,6 @@
-let masuk = prompt("Anda Ingin Mendafar? ya/tidak").toLowerCase()
+let masuk = confirm("Anda Ingin Mendafar? ya/tidak")
 
-if (masuk === "ya") {
+if (masuk) {
 
 // Mulai dan Meminta Input dari Pengguna
     let name = prompt("Inputkan Username Anda").trim()
@@ -42,6 +42,8 @@ if (masuk === "ya") {
 // Menampilkan Hasil ke Console
         console.log(daftarPengguna)
         console.table(daftarPengguna)
+        localStorage.setItem("Nama", daftarPengguna)
+        document.writeln(localStorage.getItem("Nama"));
     } else {
         document.writeln("<h1>END</h1>")
     }
