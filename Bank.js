@@ -49,6 +49,10 @@ if (balance >= 0) {
                     name = null
                     balance = null
                 }
+                break;
+                default:
+                    alert("Menu Tidak Ditemukan")
+                    break;
         }
     }
 }
